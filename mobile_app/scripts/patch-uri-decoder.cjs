@@ -1,0 +1,20 @@
+// Preserve the patched 0.5.0 decoder algorithm while supporting CommonJS consumers.
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const project = path.resolve(__dirname, '..');
+const file = require.resolve('decode-uri-component', { paths: [project] });
+if (!file.startsWith(path.join(project, 'node_modules') + path.sep)) throw Error('Decoder must be installed inside this project');
+const packageFile = path.join(path.dirname(file), 'package.json');
+const metadata = JSON.parse(fs.readFileSync(packageFile, 'utf8'));
+if (metadata.version !== '0.5.0') throw Error('Review decoder compatibility before changing its version');
+let source = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+const original = 'export default function decodeUriComponent(encodedURI)';
+const compatible = 'module.exports = function decodeUriComponent(encodedURI)';
+const canonical = source.replace(compatible, original);
+if (crypto.createHash('sha256').update(canonical).digest('hex') !== '9401353df38f8010ad7035fe8d666bce6a4902bc1cff809afc4ab23fa2e0bdaa') throw Error('Unexpected decoder source; refusing to patch');
+source = canonical.replace(original, compatible);
+fs.writeFileSync(file, source);
+metadata.type = 'commonjs';
+fs.writeFileSync(packageFile, JSON.stringify(metadata, null, 2));
+console.log('Patched URI decoder: upstream algorithm retained; CommonJS export enabled.');

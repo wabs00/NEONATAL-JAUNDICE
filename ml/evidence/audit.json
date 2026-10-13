@@ -1,0 +1,25 @@
+{
+  "total_images": 760,
+  "class_counts": {
+    "normal": 560,
+    "jaundice": 200
+  },
+  "invalid_images": [],
+  "exact_duplicate_extra_images": 5,
+  "decoded_duplicate_extra_images": 5,
+  "similarity_pairs": 5,
+  "similarity_groups": 755,
+  "groups_by_class": {
+    "normal": 558,
+    "jaundice": 197
+  },
+  "largest_group": 2,
+  "conflicting_groups": [],
+  "excluded_images": 0,
+  "group_method": "Exact decoded pixels or 64-bit perceptual hash distance <=4 including rotations/mirrors; connected components.",
+  "limitations": [
+    "Similarity groups are not patient IDs. Same-baby leakage may remain.",
+    "Folder labels have not been clinically verified.",
+    "Perceptual grouping may merge unrelated photos or miss altered copies."
+  ]
+}

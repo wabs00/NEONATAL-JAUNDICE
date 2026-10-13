@@ -1,0 +1,320 @@
+{
+  "class_mapping": {
+    "0": "normal",
+    "1": "jaundice"
+  },
+  "selected_C": 0.01,
+  "validation_candidates": [
+    {
+      "C": 0.01,
+      "validation_group_balanced_accuracy": 0.7842261904761905
+    },
+    {
+      "C": 0.1,
+      "validation_group_balanced_accuracy": 0.771978021978022
+    },
+    {
+      "C": 1.0,
+      "validation_group_balanced_accuracy": 0.7585851648351649
+    },
+    {
+      "C": 10.0,
+      "validation_group_balanced_accuracy": 0.7585851648351649
+    }
+  ],
+  "split_method": "StratifiedGroupKFold; seed 42 outer test, seed 43 inner validation; no similarity group shared.",
+  "label_source": "User dataset folder names; clinical provenance unverified.",
+  "threshold": 0.5,
+  "partitions": {
+    "train": {
+      "image_metrics": {
+        "count": 456,
+        "class_counts": {
+          "0": 336,
+          "1": 120
+        },
+        "balanced_accuracy": 0.9708333333333333,
+        "roc_auc": 0.9935515873015874,
+        "confusion_matrix_normal_jaundice": [
+          [
+            322,
+            14
+          ],
+          [
+            2,
+            118
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.9938271604938271,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.9757575757575757,
+            "support": 336.0
+          },
+          "jaundice": {
+            "precision": 0.8939393939393939,
+            "recall": 0.9833333333333333,
+            "f1-score": 0.9365079365079365,
+            "support": 120.0
+          },
+          "accuracy": 0.9649122807017544,
+          "macro avg": {
+            "precision": 0.9438832772166106,
+            "recall": 0.9708333333333333,
+            "f1-score": 0.9561327561327562,
+            "support": 456.0
+          },
+          "weighted avg": {
+            "precision": 0.9675409061373973,
+            "recall": 0.9649122807017544,
+            "f1-score": 0.96542872332346,
+            "support": 456.0
+          }
+        }
+      },
+      "group_metrics": {
+        "count": 453,
+        "class_counts": {
+          "0": 335,
+          "1": 118
+        },
+        "balanced_accuracy": 0.9706299013407539,
+        "roc_auc": 0.9936756893498608,
+        "confusion_matrix_normal_jaundice": [
+          [
+            321,
+            14
+          ],
+          [
+            2,
+            116
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.9938080495356038,
+            "recall": 0.9582089552238806,
+            "f1-score": 0.9756838905775076,
+            "support": 335.0
+          },
+          "jaundice": {
+            "precision": 0.8923076923076924,
+            "recall": 0.9830508474576272,
+            "f1-score": 0.9354838709677419,
+            "support": 118.0
+          },
+          "accuracy": 0.9646799116997793,
+          "macro avg": {
+            "precision": 0.9430578709216481,
+            "recall": 0.9706299013407539,
+            "f1-score": 0.9555838807726247,
+            "support": 453.0
+          },
+          "weighted avg": {
+            "precision": 0.9673686628846246,
+            "recall": 0.9646799116997793,
+            "f1-score": 0.9652123622906371,
+            "support": 453.0
+          }
+        }
+      }
+    },
+    "validation": {
+      "image_metrics": {
+        "count": 152,
+        "class_counts": {
+          "0": 112,
+          "1": 40
+        },
+        "balanced_accuracy": 0.7883928571428571,
+        "roc_auc": 0.8821428571428571,
+        "confusion_matrix_normal_jaundice": [
+          [
+            101,
+            11
+          ],
+          [
+            13,
+            27
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.8859649122807017,
+            "recall": 0.9017857142857143,
+            "f1-score": 0.8938053097345132,
+            "support": 112.0
+          },
+          "jaundice": {
+            "precision": 0.7105263157894737,
+            "recall": 0.675,
+            "f1-score": 0.6923076923076923,
+            "support": 40.0
+          },
+          "accuracy": 0.8421052631578947,
+          "macro avg": {
+            "precision": 0.7982456140350878,
+            "recall": 0.7883928571428571,
+            "f1-score": 0.7930565010211028,
+            "support": 152.0
+          },
+          "weighted avg": {
+            "precision": 0.8397968605724838,
+            "recall": 0.8421052631578947,
+            "f1-score": 0.8407796209379814,
+            "support": 152.0
+          }
+        }
+      },
+      "group_metrics": {
+        "count": 151,
+        "class_counts": {
+          "1": 39,
+          "0": 112
+        },
+        "balanced_accuracy": 0.7842261904761905,
+        "roc_auc": 0.8793498168498167,
+        "confusion_matrix_normal_jaundice": [
+          [
+            101,
+            11
+          ],
+          [
+            13,
+            26
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.8859649122807017,
+            "recall": 0.9017857142857143,
+            "f1-score": 0.8938053097345132,
+            "support": 112.0
+          },
+          "jaundice": {
+            "precision": 0.7027027027027027,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6842105263157895,
+            "support": 39.0
+          },
+          "accuracy": 0.8410596026490066,
+          "macro avg": {
+            "precision": 0.7943338074917022,
+            "recall": 0.7842261904761905,
+            "f1-score": 0.7890079180251514,
+            "support": 151.0
+          },
+          "weighted avg": {
+            "precision": 0.8386322886148608,
+            "recall": 0.8410596026490066,
+            "f1-score": 0.8396715577257038,
+            "support": 151.0
+          }
+        }
+      }
+    },
+    "test": {
+      "image_metrics": {
+        "count": 152,
+        "class_counts": {
+          "0": 112,
+          "1": 40
+        },
+        "balanced_accuracy": 0.8455357142857143,
+        "roc_auc": 0.9236607142857143,
+        "confusion_matrix_normal_jaundice": [
+          [
+            97,
+            15
+          ],
+          [
+            7,
+            33
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.9326923076923077,
+            "recall": 0.8660714285714286,
+            "f1-score": 0.8981481481481481,
+            "support": 112.0
+          },
+          "jaundice": {
+            "precision": 0.6875,
+            "recall": 0.825,
+            "f1-score": 0.75,
+            "support": 40.0
+          },
+          "accuracy": 0.8552631578947368,
+          "macro avg": {
+            "precision": 0.8100961538461539,
+            "recall": 0.8455357142857143,
+            "f1-score": 0.8240740740740741,
+            "support": 152.0
+          },
+          "weighted avg": {
+            "precision": 0.8681680161943319,
+            "recall": 0.8552631578947368,
+            "f1-score": 0.8591617933723198,
+            "support": 152.0
+          }
+        }
+      },
+      "group_metrics": {
+        "count": 151,
+        "class_counts": {
+          "0": 111,
+          "1": 40
+        },
+        "balanced_accuracy": 0.8494369369369369,
+        "roc_auc": 0.931981981981982,
+        "confusion_matrix_normal_jaundice": [
+          [
+            97,
+            14
+          ],
+          [
+            7,
+            33
+          ]
+        ],
+        "classification_report": {
+          "normal": {
+            "precision": 0.9326923076923077,
+            "recall": 0.8738738738738738,
+            "f1-score": 0.9023255813953488,
+            "support": 111.0
+          },
+          "jaundice": {
+            "precision": 0.7021276595744681,
+            "recall": 0.825,
+            "f1-score": 0.7586206896551724,
+            "support": 40.0
+          },
+          "accuracy": 0.8609271523178808,
+          "macro avg": {
+            "precision": 0.8174099836333879,
+            "recall": 0.8494369369369369,
+            "f1-score": 0.8304731355252606,
+            "support": 151.0
+          },
+          "weighted avg": {
+            "precision": 0.8716155797140721,
+            "recall": 0.8609271523178808,
+            "f1-score": 0.8642580604045736,
+            "support": 151.0
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "No patient IDs: similarity grouping cannot guarantee patient separation.",
+    "No TSB/TcB measurements: cannot estimate bilirubin or grade severity.",
+    "Class score is not calibrated clinical confidence.",
+    "No external or prospective clinical validation.",
+    "Hospital backgrounds, devices, lighting and skin tone may confound results."
+  ],
+  "majority_baseline_group_balanced_accuracy": 0.5
+}

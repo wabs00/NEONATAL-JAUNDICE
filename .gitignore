@@ -1,0 +1,8 @@
+data/
+.venv/
+.venv-research/
+node_modules/
+.expo/
+dist/
+__pycache__/
+.env
